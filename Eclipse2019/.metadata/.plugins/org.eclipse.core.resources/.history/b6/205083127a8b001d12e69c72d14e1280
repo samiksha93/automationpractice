@@ -1,0 +1,18 @@
+package Day18_TestNG;
+
+import org.testng.annotations.Test;
+
+public class TestNG_example1 {
+		  @Test
+		  public void logintest() {
+			  System.out.println("Hii this is logintest"); }
+		  @Test
+		  public void createtaask() {
+			  System.out.println("Hii this is createtask test");
+		  }
+		  @Test
+		  public void logout() {
+			  System.out.println("hii this is logout test");
+		  }
+  }
+

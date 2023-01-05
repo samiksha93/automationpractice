@@ -1,0 +1,59 @@
+package day17_Assignment;
+
+import java.util.List;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.interactions.Actions;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+
+public class flipcart {
+
+		public static void main(String[] args) {
+
+			WebDriverManager.chromedriver().setup();
+			WebDriver driver=new ChromeDriver();
+			driver.manage().window().maximize();
+			driver.get("https://www.flipkart.com/");
+			driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
+			Actions action = new Actions(driver);
+			//Escape pop_up menu
+			try {
+				driver.switchTo().activeElement().sendKeys(Keys.ESCAPE);
+			}catch(Exception e) {
+			}
+			
+			//find list of main menu
+			List<WebElement> menu=driver.findElements(By.className("xtXmba"));
+			
+			//iterate main menu
+			for (int i=0;i<menu.size();i++) {
+				System.out.println(menu.get(i).getText());
+				//check main menu is enable or not
+				if(menu.get(i).isEnabled()) {
+					System.out.println(menu.get(i).getText()+"\n");
+					//move pointer on all main menu one by one
+					action.moveToElement(menu.get(i)).perform();
+				
+					//try if main menu has sub menu
+					try {
+					//get the list of sub menu of main menu
+					List<WebElement>submenu=driver.findElements(By.xpath("//div[@class=\"_3XS_gI _7qr1OC\"]/a"));
+					//iterate sub menu one by one
+						for(int j=0;j<submenu.size();j++) {
+							//move cursor on submenu
+							action.moveToElement(submenu.get(j)).perform();
+							System.out.println(submenu.get(j).getText()+"\n");
+					}}catch(Exception e) {
+					
+				}
+				}
+				}
+//			driver.close();
+		}
+}

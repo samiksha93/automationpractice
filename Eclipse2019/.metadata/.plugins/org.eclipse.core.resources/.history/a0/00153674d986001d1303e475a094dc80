@@ -1,0 +1,69 @@
+package Day16;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.SendKeysAction;
+
+import utilities.SeleniumUtility;
+
+public class Assignment {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		SeleniumUtility s1=new SeleniumUtility();
+		WebDriver driver=s1.setUp("chrome","https://demo.automationtesting.in/Register.html");
+		//login into the application without identifying username and password field
+		
+		//verify mouse pointer is in first name input field
+		WebElement first_name = driver.findElement(By.cssSelector("input[placeholder=\"First Name\"]"));
+		first_name.sendKeys("Admin",Keys.TAB);
+		//switch to next tab 
+		WebElement lastname=driver.switchTo().activeElement();
+		String str=lastname.getAttribute("placeholder");
+		//verify is mouse pointer present in last name filed
+		System.out.println("is mouse pointer present in lastname input field? "+str.equals("Last Name"));
+		//type last name and press Tab key
+		lastname.sendKeys("123",Keys.TAB);
+		
+		//switch to address field by using active element and enter address and press enter button
+		WebElement address= driver.switchTo().activeElement();
+//		String str1= address.getAttribute("ng-model");
+//		System.out.println("address:"+str1);
+//		System.out.println("is mouse pointer present in Address input field? "+str1.equals("Address"));
+		address.sendKeys("pune,Maharastra",Keys.TAB);
+		
+		//switch to mobile field by using active element and enter mob no. and press enter button
+		WebElement Email_address= driver.switchTo().activeElement();
+//		String str2= Email_address.getAttribute("ng-model");
+//		System.out.println("email:"+str2);
+//		System.out.println("is mouse pointer present in Email_address input field? "+str2.equals("EmailAdress"));
+		Email_address.sendKeys("abc@gmail.com",Keys.TAB);
+		
+		//enter phone
+		driver.switchTo().activeElement().sendKeys("3497957239",Keys.TAB);
+		//select gender
+		driver.switchTo().activeElement().sendKeys((Keys.chord(Keys.ARROW_RIGHT,Keys.SPACE,Keys.TAB)));	
+		//select hobbies
+		driver.switchTo().activeElement().sendKeys((Keys.chord(Keys.TAB ,Keys.SPACE,Keys.TAB)));
+
+//		driver.switchTo().activeElement().sendKeys((Keys.chord(Keys.TAB,Keys.SPACE,Keys.TAB)));
+		//click on language
+		driver.findElement(By.id("msdd")).click();
+		//select language
+		List<WebElement> language= driver.findElements(By.cssSelector(".ui-corner-all>li>a"));
+		language.get(5).click();
+		//select skill
+		driver.findElement(By.id("Skills")).sendKeys((Keys.chord(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB)));
+		//select country
+		driver.findElement(By.className("select2-selection__arrow")).click();
+		driver.findElement(By.xpath("//li[text()=\"India\"]")).click();
+		Thread.sleep(5000);
+		driver.close();
+	}
+
+
+}

@@ -1,0 +1,68 @@
+package Day16;
+
+import java.awt.RenderingHints.Key;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.interactions.SendKeysAction;
+
+import utilities.SeleniumUtility;
+
+public class Assignment {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		SeleniumUtility s1=new SeleniumUtility();
+		WebDriver driver=s1.setUp("chrome","https://demo.automationtesting.in/Register.html");
+		//login into the application without identifying username and password field
+		Actions action = new Actions(driver);
+
+
+		//verify mouse pointer is in first name input field
+		WebElement first_name = driver.findElement(By.cssSelector("input[placeholder=\"First Name\"]"));
+		first_name.sendKeys("Admin",Keys.TAB);
+		//switch to next tab 
+		driver.switchTo().activeElement().sendKeys("123",Keys.TAB);
+		
+		//switch to address field by using active element and enter address and press enter button
+		 driver.switchTo().activeElement().sendKeys("pune,Maharastra",Keys.TAB);
+		
+		//switch to mobile field by using active element and enter mob no. and press enter button
+		driver.switchTo().activeElement().sendKeys("abc@gmail.com",Keys.TAB);
+		
+		//enter phone
+		driver.switchTo().activeElement().sendKeys("3497957239",Keys.TAB);
+		
+		//select gender
+		driver.switchTo().activeElement().sendKeys((Keys.chord(Keys.ARROW_RIGHT,Keys.SPACE,Keys.TAB)));	
+		
+		//select hobbies
+		driver.switchTo().activeElement().sendKeys((Keys.chord(Keys.TAB ,Keys.SPACE,Keys.TAB)));
+
+		//click on language
+		driver.findElement(By.id("msdd")).click();
+		//select language
+		driver.findElement(By.xpath("//li/a[text()='Hindi']")).click();
+		driver.switchTo().activeElement().sendKeys(Keys.TAB,Keys.ENTER);
+		driver.switchTo().activeElement().sendKeys(Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER);
+		driver.findElement(By.className("select2-selection__arrow")).click();
+		driver.findElement(By.xpath("//li[text()=\"India\"]")).click();
+		driver.switchTo().activeElement().sendKeys(Keys.TAB,Keys.ENTER,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB);
+		driver.switchTo().activeElement().sendKeys(Keys.ENTER,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB);
+		driver.switchTo().activeElement().sendKeys(Keys.ENTER,Keys.ARROW_DOWN,Keys.ARROW_DOWN,Keys.ENTER,Keys.TAB);
+		driver.switchTo().activeElement().sendKeys("abcde",Keys.TAB);
+		driver.switchTo().activeElement().sendKeys("abcde",Keys.TAB);
+		driver.switchTo().activeElement().sendKeys(Keys.ENTER);
+		
+		
+
+		Thread.sleep(5000);
+//		driver.close();
+	}
+}
+
+//}y

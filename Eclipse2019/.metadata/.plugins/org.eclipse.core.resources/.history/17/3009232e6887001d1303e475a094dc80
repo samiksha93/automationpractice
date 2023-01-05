@@ -1,0 +1,10 @@
+package Day17_Frame_Alert_Window_handling;
+
+public class Handling_Window_example {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

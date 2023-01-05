@@ -1,0 +1,25 @@
+package day17_Assignment;
+
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+
+import utilities.SeleniumUtility;
+
+public class Sort_assignment {
+
+	public static void main(String[] args) {
+		SeleniumUtility s1= new SeleniumUtility();
+		WebDriver driver= s1.setUp("chrome","https://jqueryui.com/sortable/");
+		WebElement frame=driver.findElement(By.cssSelector(".demo-frame"));
+		driver.switchTo().frame(frame);	
+		List<WebElement> item = driver.findElements(By.cssSelector(".ui-sortable>li"));
+		System.out.println(item.get(6).getText());
+	 	s1.performDragAndDrop(item.get(5), item.get(6));
+//		driver.close();
+	}
+
+}

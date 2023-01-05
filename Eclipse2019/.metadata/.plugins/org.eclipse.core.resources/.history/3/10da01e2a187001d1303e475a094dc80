@@ -1,0 +1,35 @@
+package day17_Assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import utilities.SeleniumUtility;
+
+public class Demoqa_alert_assignment {
+
+	public static void main(String[] args) throws InterruptedException {
+		SeleniumUtility s1 = new SeleniumUtility();
+		WebDriver driver= s1.setUp("chrome","https://demoqa.com/alerts");
+		
+		WebDriverWait wait =new WebDriverWait(driver,30);
+		wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()=\"Click me\"]")));
+		driver.findElements(By.xpath("//button[text()=\"Click me\"]")).get(0).click();
+		driver.switchTo().alert().accept();
+		
+//		driver.findElements(By.xpath("//button[text()=\"Click me\"]")).get(1).click();
+		Thread.sleep(1000);
+//		driver.switchTo().alert().accept();
+		driver.findElements(By.xpath("//button[text()=\"Click me\"]")).get(2).click();
+		Thread.sleep(1000);
+		driver.switchTo().alert().accept();
+		driver.findElements(By.xpath("//button[text()=\"Click me\"]")).get(3).click();
+		driver.switchTo().alert().sendKeys("Tester");
+		Thread.sleep(1000);
+		driver.switchTo().alert().accept();
+		driver.close();
+
+	}
+
+}

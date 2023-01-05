@@ -1,0 +1,16 @@
+package day17_Assignment;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+
+import utilities.SeleniumUtility;
+
+public class Sort_assignment {
+
+	public static void main(String[] args) {
+		SeleniumUtility s1= new SeleniumUtility();
+		WebDriver driver= s1.setUp("chrome","https://jqueryui.com/sortable/");
+		driver.findElements(By.cssSelector(".ui-sortable>li>span")).get(1);
+	}
+
+}
