@@ -1,3 +1,4 @@
+package Variable_concept;
 class StaticGlobalVariableExample2 
 {
 	public static void main(String[] args) 

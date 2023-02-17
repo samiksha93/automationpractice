@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="TestNg_Suite">
+  <test name="TestNg_Test">
+  	<groups>
+      <run>
+        <include name="Smoke Test"/>
+        <exclude name="Regression"/>
+      </run>
+    </groups>
+    <classes>
+       <class name="Day24_TestNG_Advance.GroupExamples" />
+    </classes>
+  </test>
+</suite>

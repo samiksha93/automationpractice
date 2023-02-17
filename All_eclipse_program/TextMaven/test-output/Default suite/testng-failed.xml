@@ -5,8 +5,7 @@
     <classes>
       <class name="day17_Assignment.Vtiger_comaign">
         <methods>
-          <include name="compagaign"/>
-          <include name="editcontact"/>
+          <include name="Delete_service"/>
         </methods>
       </class> <!-- day17_Assignment.Vtiger_comaign -->
     </classes>

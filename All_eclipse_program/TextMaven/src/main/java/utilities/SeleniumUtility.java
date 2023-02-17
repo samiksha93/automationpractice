@@ -8,6 +8,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -41,7 +42,7 @@ public class SeleniumUtility {
 			driver = new InternetExplorerDriver();
 		} else if (browserName.equalsIgnoreCase("firefox")) {
 			// use setup method of WebDriverManager
-			 WebDriverManager.firefoxdriver().setup();
+			WebDriverManager.firefoxdriver().setup();
 			// step2: create an instance of Chrome Browser
 			driver = new FirefoxDriver();
 		}
@@ -155,23 +156,43 @@ public class SeleniumUtility {
 	public void switchToRequiredFrameUsingIndex(int index) {
 		driver.switchTo().frame(index);
 	}
-	
+
 	public void switchControlBackToMainPage() {
 		driver.switchTo().defaultContent();
 	}
-	
+
 	public WebElement getActiveElement() {
 		return driver.switchTo().activeElement();
 	}
-	
-	public String getPageTitle() {
+
+	public String getPageTitle(String str) {
 		return driver.getTitle();
 	}
-	
+
+	public String getPageTitle1() {
+		return driver.getTitle();
+	}
+
 	public String getPageUrl() {
 		return driver.getCurrentUrl();
 	}
-
+	public  WebElement findElementby_xpath(String xpath) {
+	
+		 return driver.findElement(By.xpath(xpath));
+	}
+		 
+	public void findElementsby_xpath(String xpath,int index_no) {
+		 driver.findElements(By.xpath(xpath)).get(index_no).click();;
+	}
+	public WebElement findElementby_cssSelector(String css_selector) {
+		 return driver.findElement(By.cssSelector(css_selector));
+		
+	}
+	public void findElementsby_cssSelector(String css_selector,int index_no) {
+		 driver.findElements(By.cssSelector(css_selector)).get(index_no).click();;
+		
+	}
+	
 	// methods for select dropdown
 	// title
 	// currentUrl

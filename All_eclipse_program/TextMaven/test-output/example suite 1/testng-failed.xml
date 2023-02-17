@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [example suite 1]">
+  <test thread-count="5" name="UnitTestingTestSuite(failed)">
+    <classes>
+      <class name="Day24_TestNG_Advance.VtigerLogin">
+        <methods>
+          <include name="loginInVtiger" invocation-numbers="1 2"/>
+        </methods>
+      </class> <!-- Day24_TestNG_Advance.VtigerLogin -->
+      <class name="Day24_TestNG_Advance.Parameterization">
+        <methods>
+          <include name="testCaseOne"/>
+          <include name="testLoginOfVtiger"/>
+          <include name="testCaseThree"/>
+          <include name="testCaseTwo"/>
+        </methods>
+      </class> <!-- Day24_TestNG_Advance.Parameterization -->
+    </classes>
+  </test> <!-- UnitTestingTestSuite(failed) -->
+</suite> <!-- Failed suite [example suite 1] -->

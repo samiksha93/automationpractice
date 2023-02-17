@@ -1,3 +1,4 @@
+package Variable_concept;
 class StaticGlobalVariableExample1 
 {
 	static int empId=1001;

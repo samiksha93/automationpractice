@@ -1,3 +1,4 @@
+package Variable_concept;
 class Variableexamaple 
 {
 	public static void main(String[] args) 

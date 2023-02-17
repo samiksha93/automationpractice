@@ -1,3 +1,4 @@
+package Variable_concept;
 class NonStaticGlobalVariableExample1 
 {
 	int empId=1001;

@@ -1,3 +1,4 @@
+package Variable_concept;
 class	SimpleInterest	
 {
 	public static void main(String[] args) 

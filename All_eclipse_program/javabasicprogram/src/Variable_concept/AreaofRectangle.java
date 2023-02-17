@@ -1,3 +1,4 @@
+package Variable_concept;
 class AreaofRectangle 
 	/*
 	Area of rectangle= length*width
