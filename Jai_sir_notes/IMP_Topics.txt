@@ -1,0 +1,150 @@
+IMP Topic till now---PRIORITY 1 TOPICS
+
+
+
+
+
+
+
+#SDLC-complete - PHASES/STAGES
+WATERFALL
+V
+SPIRAL
+PROTOTYPE
+#AGILE-----------IMP
+
+#STLC--PHASES/STAGES
+#BLC
+#Test case and Bug template
+#Severiy and Priority with Examples
+#Black box testing with techniques(Test case design technique-- BVA,EP etc)
+White ,black and grey box testing diff
+#Adhoc/random/monkey testing-Error guessing tech.
+#sanity,smoke and regression testing(What and when and how performs it)
+Levels of testing-Integration,#system-Functional,#acceptance-------------------------
+#Velocity ,capacity and agile estimation
+#compatibility testing with version
+#Risk/challenges as per your project
+
+
+#Testing Task for each user story-
+
+Test case design
+Test case review
+Test case execution
+Bug log and retesting
+
+
+
+
+
+
+Mobile-
+Types of mobile applications(Native,hybrid and mobile application)
+Testing Types for mobile application(Installation,#interruption,memory-leakage etc)
+Simulator and emulator(What is that and diff)
+Latest version of browser(chrome+IE+safari and opera for ios) and OS-android+ios
+
+
+JIRA-
+#Jira task -
+1.Install JIRA as per guide provided
+#2.Read US MMT - requirement 
+3.Create User story as per the given notepad
+#4.View status - To-do / In Progress / Done
+#5.Check workflow
+#6.Testing Task/subtask-
+	a.Write Test Cases
+	b.Execute Test Cases
+	c.Review Test cases
+	d.Bug log and retest
+#7.Create task and link with main user story.
+8.Create Sprint for 2 weeks
+9.Add user story and 4-task in sprint backlog
+#10.Check Scrum board 
+#11.Add comment on task
+#12.Log bug and link to the main user story
+#13.Activity section - All,History,Comments and Work log
+14.Configuration settings for any issue type - Add any field
+15.Add any issue type - Project settings - Issue types
+16.To Add backlog,board,sprint - Go to Project settings and then features.
+#17.Filters any issue type - All issues, Recent activity,sprint wise,creator wise etc
+18.Epic - Create and link any user story
+#19.Test cases in jira
+
+
+DB-
+RDBMS
+Commands
+Diff between Delete,Truncate and Drop
+Select query with where clause 
+inner join
+aggregate functions
+PK and FK with difference
+Operactors - present in Q
+And given Q.
+
+
+API-
+What is that API
+Methods CRUD-practically
+Rest and SOAP diff
+Postman - response msg and response code and response time 
+Challenges in API
+Flow of api in postman and what m/how we do api testing
+Why api testing is needed
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+DATABASE----------------------
+
+1.Verify All records from table including columns.
+2.Verify 2 columns from a table and display only 2 columns only.
+3.Verify one record from id column from any table.
+4.Verify one record from name column from any table.
+5.Verify and Add one record in a table.
+6.Verify Update that added record.
+7.Verify Delete that updated record.
+15.Verify range between some records from any table.
+16.Verify and fetch more than 1 record from any column.
+17.Verify the latest record from any table and get only 2 records.
+21.Find 2nd ,3rd highest record from any column under table.
+22.Find 2nd ,3rd lowest record from any column under table.
+29.Find highest/lowest salary of an employee or
+30.Find 3rd/4th/5th...any highest/lowest salary of an employee.
+23.Find Max record from any record using desc order.
+24.Find Min record from any record using desc order.
+
+
+8.Verify calculation like sum,avg for any column.
+9.Verify Max and min value from any column.
+10.Verify number of records in a table.
+11.Verify records started from inital number.
+12.Verify records started from last number.
+
+13.Verify Unique record from any column(Not duplicate)
+14.Verify and use Alias for any record.
+
+18.Verify LIKE operation with different patterns for any table
+
+19.Verify any record from any table with using distinct,where clause,in  and Alias,order by.
+20.Verify any record from any table with using Between,Order BY  and Alias.
+
+
+25.Find sum record from any record.
+26.Find count record from any record.
+27.Find avg record from any record.
+28.Find records from two tables using join (mostly Inner join)
+
+

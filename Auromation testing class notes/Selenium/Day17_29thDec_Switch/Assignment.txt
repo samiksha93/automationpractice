@@ -1,0 +1,10 @@
+Open brower and enter the URL https://etrain.info/in
+click on "Reservation Rules /  Refund Rules"
+click on services
+click on SMS Services
+click on "www.indianrail.gov.in"
+get the text "INDIAN RAILWAYS PASSENGER RESERVATION ENQUIRY"
+come back to main page 
+in "Arrival/Departure at Station" section type pune and click on get Train button
+get all the train number and names
+finally close all the browser

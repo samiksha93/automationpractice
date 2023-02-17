@@ -1,0 +1,164 @@
+Top 40 SQL Queries For Testers
+1.Display employee number and total salary for each employee
+select empno,sal+comm
+from emp;
+2.Display the names of employees whose name starts with alphabet S
+select ename 
+from emp 
+where ename like 'S%';
+3.Display the names of employees whose names have sencond alphabet A in their names
+select ename 
+from emp 
+where ename like '_S%';
+4.Display employee name and department name for each employee
+select ename,dname 
+from emp e,dept d
+where e.deptno=d.deptno;
+5.Display employee number,name and location of the department in which he is working
+select empno,ename,loc
+from emp e,dept d
+where e.detpno=d.deptno;
+6.Display ename,dname even if there no employees working in a particular department(use outer join)
+select ename,dname
+from emp e,dept d 
+where e.deptno(+)=d.deptno;
+7.select ename if ename exists more than once
+select distinct(ename)
+from emp e 
+where ename in (select ename from emp where e.empno<>empno);
+8.Display the dept no with highest annual remuneration bill as compensation
+select deptno,sum(sal) 
+from emp
+group by deptno having sum(sal)=(select max(sum(sal)) from emp group by deptno);
+9.List out the lowest paid employees working for each manager, exclude any groups where minsal is less than 1000 sort the output by sal
+select e.ename,e.mgr,e.sal 
+from emp e
+where sal in (select min(sal) from emp where mgr=e.mgr) and
+e.sal>1000 order by sal;
+10.Display current date
+select sysdate
+from dual;
+11. Display various jobs along with total salary for each of the job where total salary is greater than 40000?
+select job,sum(sal)
+from emp 
+group by job having sum(sal)>40000;
+12.Display the name of employee who earn Highest Salary?
+select ename, sal 
+from emp 
+where sal>=(select max(sal) from emp );
+13. Display the employee Number and name for employee working as clerk and earning highest salary among the clerks?
+select ename,empno 
+from emp 
+where sal=(select max(sal) from emp wherejob='CLERK') and job='CLERK' ;
+14. Display the employee names who are Working in Chicago?
+select e.ename,d.loc 
+from emp e,dept d
+where e.deptno=d.deptno and d.loc='CHICAGO';
+15. Display the job groups having Total Salary greater than the maximum salary for Managers?
+select job ,sum(sal) 
+from emp 
+group by job having sum(sal) >(select max(sal) from emp where job='MANAGER');
+16. Display the names of employees from department number 10 with salary greater than that of ANY employee working in other departments?
+select ename,deptno
+from emp
+where sal>any(select min(sal) from emp where deptno!=10 group by deptno) and deptno=10 ;
+17. Display the names of employees from department number 10 with salary greater than that of ALL employee working in other departments?
+select ename,deptno
+from emp
+where sal>all(select max(sal) from emp where deptno!=10 group by deptno) and deptno=10 ;
+18. Display the names of employees in Upper Case?
+select upper(ename)
+from emp;
+19. Display the names of employees in Lower Case?
+select Lower(ename)
+from emp;
+20. Display the length of all the employee names?
+select length(ename)
+from emp;
+21.Display the name of employee Concatinate with Employee Number?
+select ename||' '||empno 
+from emp;
+22. Display the information from the employee table . where ever job Manager is found it should be displayed as Boss?
+select ename ,replace(job,'MANAGER','BOSS') 
+from emp;
+23. Display those who are not managers?
+select ename 
+from emp
+where job!='MANAGER';
+24.Display the details of those employees who are in sales department and grade is 3?
+select e.ename,d.dname,grade
+from emp e,dept d ,salgrade 
+where e.deptno=d.deptno and dname='SALES' and grade=3;
+25. Display those department whose name start with"S" while location name ends with "K"?
+select e.ename,d.loc 
+from emp e ,dept d 
+where d.loc like('%K') and ename like('S%');
+26. Display those employees whose manager name is Jones?
+select e.ename Superior,e1.ename Subordinate
+from emp e,e1 
+where e.empno=e1.mgr and e.ename='JONES';
+27. Display those employees whose salary is more than 3000 after giving 20% increment?
+select ename,sal,(sal+(sal*0.20))
+from emp 
+where (sal+(sal*0.20))>3000;
+28. Display employee name,dept name,salary,and commission for those sal in between 2000 to 5000 while location is Chicago?
+Select e.ename,d.dname,e.sal,e.comm
+from emp e,dept d 
+where e.deptno=d.deptno and sal between 2000 and 5000;
+29. Display those employees whose salary is greater than his managers salary?
+Select e.ename,e.sal,e1.ename,e1.sal
+from emp e,e1 
+where e.mgr=e1.empno and e.sal>e1.sal;
+30. Display the grade and employees name for the deptno 10 or 30 but grade is not 4 while joined the company before 31-DEC-82?
+select ename,grade,deptno,sal 
+from emp ,salgrade
+where ( grade,sal) in ( select grade,sal from salgrade,emp where sal between losal and hisal)
+and grade!=4 and deptno in (10,30) and hiredate<'31-Dec-82';
+31. Delete those employees who joined the company before 31-Dec-82 while their department Location is New York or Chicago?
+select e.ename,e.hiredate,d.loc
+from emp e,dept d 
+where e.deptno=d.deptno and hiredate<'31-Dec-82' and d.loc in('NEW YORK','CHICAGO');
+32. List out all the employee names ,job,salary,grade and deptname for every one in a company except 'CLERK' . Sort on salary display the highest salary?
+select e.ename ,e.job,e.sal,d.dname ,grade
+from emp e,salgrade,dept d 
+where (e.deptno=d.deptno and e.sal between losal and hisal ) 
+order by e.sal desc;
+33.Display employee name,sal,comm and netpay for those employees whose netpay is greater than or equal to any other employee salary of the company?
+select ename,sal,NVL(comm,0),sal+NVL(comm,0) 
+from emp
+where sal+NVL(comm,0) >any (select e.sal from emp e );
+34. Display those employees whose salary is less than his manager but more than salary of other managers?
+select e.ename sub,e.sal
+from emp e,e1,dept d
+where e.deptno=d.deptno and e.mgr=e1.empno and e.sal<e1.sal and e.sal >any (select e2.sal from emp e2, e,dept d1
+where e.mgr=e2.empno and d1.deptno=e.deptno);
+35. Delete those records from emp table whose deptno not available in dept table?
+delete from emp e 
+where e.deptno not in (select deptno from dept);
+36. Display those enames whose salary is out of grade available in salgrade table?
+select empno,sal 
+from emp
+where sal<(select min(LOSAL) from salgrade )
+OR sal>(select max(hisal) from salgrade);
+37. Display those employees whose salary is odd value?
+select ename ,sal 
+from emp 
+where mod(sal,2)!=0;
+38.Display those employees who joined in the company in the month of Dec?
+Select empno,ename
+from emp 
+where trim(to_char(hiredate,'Mon'))=trim('DEC');
+39. Delete those records where no of employees in particular department is less than 3?
+Delete from emp 
+where deptno in (select deptno from emp group by deptno having count(*) heart emoticon ;
+40. Display empno,ename,deptno from emp table. Instead of display department numbers display the related department name(Use decode function)?
+select empno,ename,deptno,Decode(deptno,10,'ACCOUNTING'
+,20,'RESEARCH',30,'SALES','OPERATIONS')DName
+from emp;
+41.Display the Second maximum salary from the table using subquery.
+select max(salary)
+from Employee
+where salary NOT IN (select max(salary) from Employee);
+42.Display the Second maximum salary from the table using subquery.
+select TOP 1 salary from ( select TOP 2 salary from employees order by salary desc) as emp
+order by salary asc

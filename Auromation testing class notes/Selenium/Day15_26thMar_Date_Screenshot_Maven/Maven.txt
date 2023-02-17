@@ -1,0 +1,33 @@
+Maven Configuration in System:
+
+1. Open browser and enter the URL: https://maven.apache.org/download.cgi
+2. goto file section and click on "apache-maven-3.8.3-bin.zip"
+3. after downloading unzip it and copy the unzip folder under "C:\"
+4. Go inside the unzip folder till bin  and copy the path like "C:\apache-maven-3.8.3\bin"
+5. Goto "THis PC" ---> Properties --> Adv. sys Settings ---> Advance ---> Env. Variable --> System Variable --> Select Path --> Select edit button ---> "New" ---> paste above path ---> OK -->OK  --->OK
+
+6. Open command prompt and type "mvn -version" 
+msg:
+
+Apache Maven 3.8.3 (ff8e977a158738155dc465c6a97ffaf31982d739)
+Maven home: C:\apache-maven-3.8.3
+Java version: 1.8.0_301, vendor: Oracle Corporation, runtime: C:\Program Files\Java\jdk1.8.0_301\jre
+Default locale: en_US, platform encoding: Cp1252
+OS name: "windows 10", version: "10.0", arch: "amd64", family: "windows"
+
+
+Maven Project Creation:
+
+1. File-->New-->Others-->Maven-->Maven Project--> Select "Create Simple Project" check box-->Next -->Group ID(Any name) --> ArtifactID(Project Name) -->Finish
+2. Open Maven project, doubel click on pom.xml
+3. add "<dependencies> </dependencies>" before </project>
+4. In bitween <dependencies> tag add below dependencies
+
+Selenium Dependency:
+https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java/3.141.59
+
+TestNG Dependency:
+https://mvnrepository.com/artifact/org.testng/testng/6.14.3
+
+WebDriverManager Dependency:
+https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager/3.8.1

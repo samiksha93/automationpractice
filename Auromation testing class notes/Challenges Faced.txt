@@ -1,0 +1,33 @@
+Selenium Challenges 
+o     Dealing with pop-up windows
+o     Testing dynamic text or content
+o     How to go about testing Flash
+o     Capturing screen shots, either to file or in some form of report
+o     Iteration of the test case, running it repeatedly with some minor change
+o     Data Driven Testing, using suites of pre-cooked data or generating it on the fly
+o     Generating useful test status reports
+o     Configuring Node
+o     Setting up Grid
+o    handling Alerts Popups
+o    Switching between windows
+o    Working with Nested frames.
+o    Field validation
+o    How to identify dynamic objects.
+o    Xpath and CSS locators for identifying elements.
+o     File Upload/Download Using : Java-AutoIT-Selenium
+o     Handling Multiple Popup Windows.
+o     Switching with multiple Windows
+
+Projects Challenges 
+1. time pressure and deadlines
+2. late migration of components and DBs
+3. requirements getting changed in the middle
+4. patch migration without intimating
+5. less experienced resources
+6. large data in DB which increases the testing time
+7. third party intervention - when some orders are made, onsite guys have to approve the orders before proceeding with next application
+8. defect rejection without even analysing the probs
+9. some defects which feels hardto recreate
+10. Finding critical test data -misbehaviour of system for a few types of test data.
+11. Bugs closing taking its max time
+12. n/w unavailability

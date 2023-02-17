@@ -1,0 +1,22 @@
+1.	Enter URL to open Orangehrm website.
+2.	Enter username and password 
+3.	Click on login button
+4.	Click on pim option to create record
+5.	Click on add button
+6.	Enter employee name and id
+7.	Click on save button
+8.	Again click on pim option to search a particular record 
+9.	Search record by using employee name or id
+10.	Click on search button
+11.	Verify record is created or not
+12.	Go to the particular record and click on edit button and update required details 
+13.	Save the update detail
+14.	Again click on pim button
+15.	Search record by using employee name or id
+16.	Verify record is updated or not
+17.	Select the record you have created
+18.	Click on delete button
+19.	Select   “yes delete option” in delete confirmation popup 
+20.	Again click on pim option to check particular record is deleted or not
+21.	Search record by using id
+22.	Check error message   “No records found” is show or not
